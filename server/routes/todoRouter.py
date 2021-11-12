@@ -19,3 +19,9 @@ def create_ToDo(todo: ToDo):
 def find_All_ToDos():
     todos = collection.find()
     return todosEntity(todos)
+
+
+@todoRouter.get("/todo/{id}")
+def find_ToDo(id: str):
+    todo = collection.find_one({"_id": ObjectId(id)})
+    return todoEntity(todo)
