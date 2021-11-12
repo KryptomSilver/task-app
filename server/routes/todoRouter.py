@@ -13,3 +13,9 @@ def create_ToDo(todo: ToDo):
     del new_ToDo["id"]
     collection.insert_one(new_ToDo).inserted_id
     return "ToDo created"
+
+
+@todoRouter.get("/todo")
+def find_All_ToDos():
+    todos = collection.find()
+    return todosEntity(todos)
