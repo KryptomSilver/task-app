@@ -1,4 +1,8 @@
 from pymongo import MongoClient
-from env import MONGOURI
 
-conn = MongoClient(host=MONGOURI)
+from config.environment import MONGOURI,COLLECTION,DBNAME
+
+
+conn = MongoClient(MONGOURI)
+db = conn[DBNAME]
+collection = db[COLLECTION]
