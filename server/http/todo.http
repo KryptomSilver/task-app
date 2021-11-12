@@ -1,2 +1,15 @@
 ### Create ToDO
 POST http://localhost:8000/todo
+Content-Type: application/json
+
+{
+    "name":"ASPP",
+    "description":"APP para usar python",
+    "state":false
+}
+
+### Get ToDos
+GET http://localhost:8000/todo
+
+### Get ToDos
+GET http://localhost:8000/todo/618e85a18a05ac311aecd39a
