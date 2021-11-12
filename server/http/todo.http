@@ -11,7 +11,7 @@ Content-Type: application/json
 ### Get ToDos
 GET http://localhost:8000/todo
 
-### Get ToDos
+### Get ToDo
 GET http://localhost:8000/todo/618e85a18a05ac311aecd39a
 
 ### Update ToDos
@@ -23,3 +23,5 @@ Content-Type: application/json
     "description":"APP para usar python",
     "state":false
 }
+### Delete ToDo
+DELETE http://localhost:8000/todo/618e8df30df3276194ee59f8

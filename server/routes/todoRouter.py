@@ -1,8 +1,9 @@
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, HTTPException, Response
 from models.todoModel import ToDo
 from config.database import collection
 from schemas.todoSchema import todosEntity, todoEntity
 from bson.objectid import ObjectId
+from starlette.status import HTTP_204_NO_CONTENT
 
 todoRouter = APIRouter()
 
@@ -41,3 +42,13 @@ def update_ToDo(id: str, todo: ToDo):
         {"_id": ObjectId(id)}, {"$set": update_ToDo})
     todo = collection.find_one({"_id": ObjectId(id)})
     return todoEntity(todo)
+
+
+@todoRouter.delete("/todo/{id}", status_code=HTTP_204_NO_CONTENT)
+def delete_ToDo(id: str):
+    find_ToDo = collection.find_one({"_id": ObjectId(id)})
+    if(not find_ToDo):
+        raise HTTPException(status_code=404, detail="ToDo not found")
+    collection.find_one_and_delete(
+        {"_id": ObjectId(id)})
+    return Response(status_code=HTTP_204_NO_CONTENT)
