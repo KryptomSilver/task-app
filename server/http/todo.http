@@ -13,3 +13,13 @@ GET http://localhost:8000/todo
 
 ### Get ToDos
 GET http://localhost:8000/todo/618e85a18a05ac311aecd39a
+
+### Update ToDos
+PUT http://localhost:8000/todo/616e85a18a05ac311aecd39a
+Content-Type: application/json
+
+{
+    "name":"Hola",
+    "description":"APP para usar python",
+    "state":false
+}
