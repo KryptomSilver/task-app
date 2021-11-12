@@ -16,13 +16,13 @@ def create_ToDo(todo: ToDo):
     return "ToDo created"
 
 
-@todoRouter.get("/todo")
+@todoRouter.get("/todo", response_model=list[ToDo])
 def find_All_ToDos():
     todos = collection.find()
     return todosEntity(todos)
 
 
-@todoRouter.get("/todo/{id}")
+@todoRouter.get("/todo/{id}", response_model=ToDo)
 def find_ToDo(id: str):
     find_ToDo = collection.find_one({"_id": ObjectId(id)})
     if(not find_ToDo):
@@ -31,7 +31,7 @@ def find_ToDo(id: str):
     return todoEntity(todo)
 
 
-@todoRouter.put("/todo/{id}")
+@todoRouter.put("/todo/{id}", response_model=ToDo)
 def update_ToDo(id: str, todo: ToDo):
     find_ToDo = collection.find_one({"_id": ObjectId(id)})
     if(not find_ToDo):

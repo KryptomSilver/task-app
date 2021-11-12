@@ -3,8 +3,8 @@ POST http://localhost:8000/todo
 Content-Type: application/json
 
 {
-    "name":"ASPP",
-    "description":"APP para usar python",
+    "name":"",
+    "description":"",
     "state":false
 }
 
@@ -12,16 +12,16 @@ Content-Type: application/json
 GET http://localhost:8000/todo
 
 ### Get ToDo
-GET http://localhost:8000/todo/618e85a18a05ac311aecd39a
+GET http://localhost:8000/todo/<id>
 
 ### Update ToDos
-PUT http://localhost:8000/todo/616e85a18a05ac311aecd39a
+PUT http://localhost:8000/todo/<id>
 Content-Type: application/json
 
 {
-    "name":"Hola",
-    "description":"APP para usar python",
+    "name":"",
+    "description":"",
     "state":false
 }
 ### Delete ToDo
-DELETE http://localhost:8000/todo/618e8df30df3276194ee59f8
+DELETE http://localhost:8000/todo/<id>
