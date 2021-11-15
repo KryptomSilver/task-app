@@ -1,4 +1,5 @@
 import { combineReducers } from "redux";
-import todos from "./todoReducer";
+import tasks from "./taskReducer";
+import alert from "./alertReducer";
 
-export default combineReducers({ todos });
+export default combineReducers({ tasks, alert });

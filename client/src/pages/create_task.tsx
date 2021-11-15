@@ -1,12 +1,13 @@
 import React from "react";
 import CardFormAdd from "../components/cards/CardFormAdd";
 
-const CreateTODO = () => {
+const CreateTASK = () => {
+ 
   return (
     <div className="d-flex justify-content-center align-items-center">
-      <CardFormAdd />
+      <CardFormAdd  />
     </div>
   );
 };
 
-export default CreateTODO;
+export default CreateTASK;

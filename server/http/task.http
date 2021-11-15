@@ -1,0 +1,35 @@
+### Create task
+POST http://localhost:8000/task
+Content-Type: application/json
+
+{
+    "name":"Nueva tarea",
+    "description":"sdkgfjsdf",
+    "state":false
+}
+
+### Get tasks
+GET http://localhost:8000/task
+
+### Get task
+GET http://localhost:8000/task/6191efde5d97bbb360066cc1
+
+### Update tasks
+PATCH http://localhost:8000/task/6191efde5d97bbb360066cc1
+Content-Type: application/json
+
+{
+    "name":"",
+    "description":"",
+    "state":false
+}
+### Delete task
+DELETE http://localhost:8000/task/<id>
+### Update tasks
+
+PATCH  http://localhost:8000/task/state/6191efde5d97bbb360066cc1
+Content-Type: application/json
+
+{
+    "state": false
+}

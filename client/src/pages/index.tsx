@@ -1,15 +1,15 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import Card from "../components/cards/Card";
+import { RootStore } from "../interfaces/interfaces";
 
 const Home = () => {
+  const { tasks } = useSelector((state: RootStore) => state);
   return (
     <div className="row mt-4">
-      <div className="col-6 mt-4">
-        <Card />
-      </div>
-      <div className="col-6 mt-4">
-        <Card />
-      </div>
+      {tasks.map((task) => (
+        <Card task={task} key={task.id} />
+      ))}
     </div>
   );
 };
